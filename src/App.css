@@ -4,3 +4,33 @@
   padding: 2rem;
   text-align: center;
 }
+
+.recipe-card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.recipe-card {
+  position: relative;
+  overflow: hidden; 
+}
+
+.recipe-image {
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.recipe-caption {
+  padding: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .recipe-card-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}

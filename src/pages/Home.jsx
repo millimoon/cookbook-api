@@ -23,7 +23,7 @@ function Home() {
     }, []);
 
     return (
-        <div>
+        <div className="recipe-card-container">
         {recipes.map((recipe) => (
             <Link key={recipe.id} to={`/${recipe.id}`}>
                 <DisplayRecipes recipe={recipe} />
