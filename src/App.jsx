@@ -15,16 +15,15 @@ function App() {
     <>
     <h1>What's Cooking Good Looking?</h1>
     <Navbar />
-    <Home />
-    {/* <Footer /> */}
     <Routes>
       <Route  path='/' element={<Home />} />
       {/* <Route path='breakfast' element={<Breakfast />} />
       <Route path='lunch' element={<Lunch />} />
       <Route path='dinner' element={<Dinner />} />
       <Route path='dessert' element={<Dessert />} /> */}
-      <Route path='recipeId' element={<Recipe />} />
+      <Route path='/:id' element={<Recipe />} />
     </Routes>
+    {/* <Footer /> */}
     </>
   )
 }
