@@ -10,7 +10,7 @@ function Recipe() {
 
     const {id} = useParams();
 
-    const client = createClient({ space: "nnt03141ba77", accessToken: "PCRGPCygtuhW86qDCq1bGMTvEpuaqM4PaEVCfQRAJDI"});
+    const client = createClient({ space: "", accessToken: ""});
 
     // Funktion zum Fetchen der API von Contentful:
     useEffect(() => {
