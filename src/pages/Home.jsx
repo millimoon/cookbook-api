@@ -6,16 +6,16 @@ function Home() {
 
     const [recipes, setRecipes] = useState([]);
 
-    // Funktion zum Fetchen der API:
+    // Funktion zum Fetchen der API von Contentful:
     useEffect(() => {
     async function fetchData() {
         try {
-          const getRecipes = await fetch('');
+          const getRecipes = await client.getEntries({ content_type: ''});
           if (!getRecipes.ok) throw new Error(`Request failed with a status of ${getRecipes.status}`);
           const parseData = await getRecipes.json();
           setRecipes(parseData);
         } catch (error) {
-          console.error(error.message);
+          console.error(error);
         }
       }
   
