@@ -1,6 +1,7 @@
 import {Routes, Route} from 'react-router-dom';
 import Navbar from './ui/Navbar.jsx'
 import Home from './pages/Home.jsx'
+// import Footer from './ui/Footer.jsx'
 // import Breakfast from './pages/Breakfast.jsx'
 // import Lunch from './pages/Lunch.jsx'
 // import Dinner from './pages/Dinner.jsx'
@@ -14,15 +15,15 @@ function App() {
     <>
     <h1>What's Cooking Good Looking?</h1>
     <Navbar />
-    <Home />
     <Routes>
       <Route  path='/' element={<Home />} />
       {/* <Route path='breakfast' element={<Breakfast />} />
       <Route path='lunch' element={<Lunch />} />
       <Route path='dinner' element={<Dinner />} />
       <Route path='dessert' element={<Dessert />} /> */}
-      <Route path='recipeId' element={<Recipe />} />
+      <Route path='/:id' element={<Recipe />} />
     </Routes>
+    {/* <Footer /> */}
     </>
   )
 }
