@@ -3,9 +3,9 @@ import { useState, useEffect } from 'react';
 import { createClient } from 'contentful';
 import DisplayRecipes from '../ui/DisplayRecipes';
 
-function Breakfast() {
+function Dessert() {
 
-    const [breakfastRecipes, setBreakfastRecipes] = useState([]);
+    const [dessertRecipes, setDessertRecipes] = useState([]);
 
     const client = createClient({ space: `${import.meta.env.VITE_contentful_space_id}`, accessToken: `${import.meta.env.VITE_contentful_delivery_api_key}`});
 
@@ -14,9 +14,9 @@ function Breakfast() {
     async function fetchData() {
         try {
           await client.getEntries().then((data) => {
-            const filteredRecipes = data.items.filter(recipe => recipe.fields.typeOfFood === 1);
+            const filteredRecipes = data.items.filter(recipe => recipe.fields.typeOfFood === 4);
             console.log(filteredRecipes)
-            setBreakfastRecipes(filteredRecipes);
+            setDessertRecipes(filteredRecipes);
           });
 
         } catch (error) {
@@ -29,7 +29,7 @@ function Breakfast() {
 
     return (
         <div className="recipe-card-container">
-        {breakfastRecipes?.map((recipe) => (
+        {dessertRecipes?.map((recipe) => (
             <Link key={recipe.sys.id} to={`/${recipe.sys.id}`}>
                 <DisplayRecipes recipe={recipe} />
             </Link>
@@ -38,4 +38,4 @@ function Breakfast() {
     );
 }
 
-export default Breakfast;
+export default Dessert;
