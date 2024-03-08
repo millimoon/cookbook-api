@@ -10,7 +10,7 @@ function Recipe() {
 
     const {id} = useParams();
 
-    const client = createClient({ space: "", accessToken: ""});
+    const client = createClient({ space: `${import.meta.env.VITE_contentful_space_id}`, accessToken: `${import.meta.env.VITE_contentful_delivery_api_key}`});
 
     // Funktion zum Fetchen der API von Contentful:
     useEffect(() => {
