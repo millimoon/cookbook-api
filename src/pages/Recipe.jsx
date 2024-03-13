@@ -1,5 +1,6 @@
-import {useParams} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { createClient } from 'contentful';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { useState, useEffect } from 'react';
 
 
@@ -35,13 +36,18 @@ function Recipe() {
                 <h2>{singleRecipe?.fields?.title}</h2>
                 <img src={singleRecipe?.fields?.image.fields.file.url} alt="" />
                 <div>{singleRecipe?.fields?.image.fields.description}</div>
-                <div>
-                    <ul>
-                        <li></li>
-                    </ul>
+                <h4>Info</h4>
+                <div className="recipe-info">
+                    {singleRecipe?.fields?.info && documentToReactComponents(singleRecipe.fields.info)}
                 </div>
-                <h4>Instructions</h4>
-                <div></div>
+                <h4>Ingredients</h4>
+                <div className="recipe-directions">
+                    {singleRecipe?.fields?.ingredients && documentToReactComponents(singleRecipe.fields.ingredients)}
+                </div>
+                <h4 >Instructions</h4>
+                <div className="recipe-directions">
+                    {singleRecipe?.fields?.directions && documentToReactComponents(singleRecipe.fields.directions)}
+                </div>
             </div>
         </>
     );
