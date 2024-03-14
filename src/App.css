@@ -10,8 +10,7 @@ h1 {
   text-align: center;
   font-size: 2.5em;
   margin-top: 30px;
-  color: #b67357;
-
+  color: #6a57b6;
 }
 
 .container {
@@ -32,10 +31,12 @@ nav a {
   text-decoration: none;
   padding: 20px 20px;
   border-radius: 10px;
+  
 }
 
 nav a:hover {
   background-color: #d8d8d8;
+  
 }
 
 
@@ -56,10 +57,12 @@ nav a:hover {
 }
 
 .recipe-card img {
-  width: 100%;
+  margin: 2.5vh;
+  margin-left: 4.5vh;
+  width: 90%;
   height: 500px;
   object-fit: cover;
-  border-radius: 15px;
+  justify-content: center;
 }
 
 .recipe-card h2 {
@@ -74,6 +77,27 @@ nav a:hover {
   color: #666;
 }
 
+.recipe-caption {
+  font-size: 1.8em;
+  font-weight: bold;
+  text-align: center; 
+  margin-top: 10px;
+  color: #333;
+}
+
+.recipe-teaser {
+  width: 80vh;
+  margin-left: 7.5vh;
+  font-size: 1.1em;
+  text-align: left;
+  margin-top: 5px;
+  color: #666;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
 
 .single-recipe {
   max-width: 110vh;
@@ -87,20 +111,31 @@ nav a:hover {
 
 .single-recipe h2 {
   color: #333;
+  font-size: 5vh;
 }
 
 .single-recipe img {
   object-fit: cover;
   object-position: center;
   width: 90%;
-  margin: 5vh;
+  margin: 3vh;
+  margin-left: 4.5vh;
   max-height: 90vh;
   height: auto;
   
   border-radius: 10px;
 }
+h4 {
+  font-size: 2.5vh;
+  margin-left: 10vh;
+  color: #333;
+}
+
+
 
 .single-recipe div {
+  margin: 4vh;
+  margin-left: 10vh;;
   margin-top: 10px;
   color: #666;
 }
@@ -113,6 +148,8 @@ nav a:hover {
 .single-recipe li {
   font-size: 0.9em;
 }
+
+
 
 @media screen and (max-width: 768px) {
   .recipe-card {
